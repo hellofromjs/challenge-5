@@ -21,7 +21,9 @@ document.querySelector('#try-again').addEventListener('click', e => {
 function make_ordinal(year) {
 	const century = Math.ceil(parseInt(year) / 100)
 
-	if (century % 10 == 1) {
+	if (century == 11 || century == 12 || century == 13) {
+		return century + 'th'
+	} else if (century % 10 == 1) {
 		return century + 'st'
 	} else if (century % 10 == 2) {
 		return century + 'nd'
